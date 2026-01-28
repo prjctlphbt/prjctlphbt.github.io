@@ -1,0 +1,22 @@
+# Jekyll configuration
+title: Beijing Restaurant: Authentic Chinese Cuisine & Dining Experience
+description: Savor traditional Beijing flavors in our elegant restaurant. Fresh, handcrafted dishes, warm atmosphere, and exceptional service await you. Reserve your table today!
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
