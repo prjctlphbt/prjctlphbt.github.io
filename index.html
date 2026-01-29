@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beijing Restaurant - Authentic Chinese Cuisine in Washington DC</title>
-    <meta name="description" content="Experience authentic Chinese cuisine at Beijing Restaurant in Washington DC. Fresh ingredients, traditional recipes, and warm hospitality await you.">
+    <!-- ISSUE: title_too_long (>60 chars) -->
+    <title>Beijing Restaurant - The Very Best Authentic Traditional Chinese Cuisine and Fine Dining Experience in Washington DC Area</title>
+    <!-- ISSUE: missing_meta_description - intentionally omitted -->
+    <!-- ISSUE: missing_canonical - no canonical tag -->
+    <!-- ISSUE: missing_schema - no structured data -->
     <style>
         * {
             margin: 0;
@@ -72,7 +75,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(139, 0, 0, 0.7), rgba(165, 42, 42, 0.7)), 
+            background: linear-gradient(rgba(139, 0, 0, 0.7), rgba(165, 42, 42, 0.7)),
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23d2691e" width="1200" height="600"/><circle fill="%23cd853f" cx="200" cy="150" r="80"/><circle fill="%23daa520" cx="800" cy="300" r="60"/><circle fill="%23b8860b" cx="1000" cy="100" r="40"/></svg>');
             background-size: cover;
             background-position: center;
@@ -99,48 +102,6 @@
             margin-right: auto;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: #d2691e;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #cd853f;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(210, 105, 30, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #8b0000;
-        }
-
-        /* Menu Highlights */
         .menu-highlights {
             padding: 80px 0;
             background: white;
@@ -295,11 +256,6 @@
                 font-size: 2.5rem;
             }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
             .menu-grid,
             .info-grid,
             .testimonial-grid {
@@ -316,6 +272,8 @@
                 <a href="/" class="nav-link">Home</a>
                 <a href="/menu" class="nav-link">Menu</a>
                 <a href="/about" class="nav-link">About</a>
+                <!-- ISSUE: broken_internal_links - link to non-existent page -->
+                <a href="/gallery" class="nav-link">Gallery</a>
                 <a href="/contact" class="nav-link">Contact</a>
             </div>
         </nav>
@@ -325,49 +283,37 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
+                    <!-- ISSUE: multiple_h1 - second H1 will be added below -->
                     <h1>Beijing Restaurant</h1>
-                    <p>Experience authentic Chinese cuisine in the heart of Washington DC. Fresh ingredients, traditional recipes, and warm hospitality await you.</p>
-                    <div class="cta-buttons">
-                        <a href="/reservations" class="btn btn-primary">Make Reservation</a>
-                        <a href="/menu" class="btn btn-secondary">View Menu</a>
-                    </div>
+                    <p>Experience authentic Chinese cuisine in the heart of Washington DC.</p>
+                    <!-- ISSUE: no_cta_detected - removed CTA buttons from hero -->
                 </div>
             </div>
         </section>
 
+        <!-- ISSUE: multiple_h1 - adding second H1 -->
         <section class="menu-highlights">
             <div class="container">
-                <h2 class="section-title">Menu Highlights</h2>
+                <h1 class="section-title">Menu Highlights</h1>
                 <div class="menu-grid">
                     <div class="menu-item">
+                        <!-- ISSUE: missing_alt_text - images without alt -->
+                        <img src="peking-duck.jpg">
                         <h3>Peking Duck</h3>
                         <p>Traditional roasted duck served with pancakes, scallions, and hoisin sauce</p>
                         <div class="price">$28.95</div>
                     </div>
                     <div class="menu-item">
+                        <img src="kung-pao.jpg">
                         <h3>Kung Pao Chicken</h3>
                         <p>Diced chicken with peanuts, vegetables, and chili peppers in savory sauce</p>
                         <div class="price">$16.95</div>
                     </div>
                     <div class="menu-item">
+                        <img src="mapo-tofu.jpg">
                         <h3>Ma Po Tofu</h3>
                         <p>Silky tofu in spicy Sichuan sauce with ground pork and scallions</p>
                         <div class="price">$14.95</div>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Sweet & Sour Pork</h3>
-                        <p>Crispy pork pieces with bell peppers and pineapple in tangy sauce</p>
-                        <div class="price">$17.95</div>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Mongolian Beef</h3>
-                        <p>Tender beef strips with onions and scallions in savory brown sauce</p>
-                        <div class="price">$19.95</div>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Dan Dan Noodles</h3>
-                        <p>Hand-pulled noodles with spicy sesame sauce and preserved vegetables</p>
-                        <div class="price">$13.95</div>
                     </div>
                 </div>
             </div>
@@ -384,40 +330,30 @@
                     </div>
                     <div class="info-card">
                         <h3>Location</h3>
-                        <p>1234 Connecticut Avenue NW</p>
-                        <p>Washington, DC 20036</p>
-                        <p><strong>Phone:</strong> (202) 555-0123</p>
-                        <p><strong>Email:</strong> info@beijingrestaurantdc.com</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>Reservations</h3>
-                        <p>We recommend making reservations for dinner service, especially on weekends.</p>
-                        <p>Walk-ins are welcome based on availability.</p>
-                        <a href="/reservations" class="btn btn-primary" style="margin-top: 1rem;">Book Now</a>
+                        <!-- ISSUE: incomplete_nap - missing full address/phone format -->
+                        <p>Washington, DC</p>
+                        <!-- ISSUE: no_embedded_map - no Google Map -->
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ISSUE: thin_content - very sparse testimonials section -->
         <section class="testimonials">
             <div class="container">
-                <h2 class="section-title">What Our Guests Say</h2>
+                <h2 class="section-title">Reviews</h2>
                 <div class="testimonial-grid">
                     <div class="testimonial">
-                        <p>"The best Chinese food in DC! The Peking Duck is absolutely incredible and the service is always outstanding."</p>
-                        <div class="testimonial-author">- Sarah M.</div>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Authentic flavors and generous portions. This has become our go-to spot for special occasions."</p>
-                        <div class="testimonial-author">- Michael R.</div>
-                    </div>
-                    <div class="testimonial">
-                        <p>"The atmosphere is warm and welcoming, and every dish we've tried has been exceptional."</p>
-                        <div class="testimonial-author">- Jennifer L.</div>
+                        <p>"Good food."</p>
+                        <div class="testimonial-author">- S.</div>
                     </div>
                 </div>
+                <!-- ISSUE: no_reviews_schema - missing review schema markup -->
             </div>
         </section>
+
+        <!-- ISSUE: no_faq_content - no FAQ section -->
+        <!-- ISSUE: missing_local_schema - no LocalBusiness schema -->
     </main>
 
     <footer>
@@ -425,11 +361,20 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Beijing Restaurant</h4>
-                    <p>Authentic Chinese cuisine in Washington DC</p>
-                    <p>Serving the community since 1995</p>
+                    <p>Chinese food in DC</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p>1234 Connecticut Avenue NW</p>
-                    <p>Washington, DC 20036</p>
-                    <p>(202) 555
+                    <h4>Contact</h4>
+                    <!-- ISSUE: contact_no_info - incomplete contact info -->
+                    <p>Washington, DC</p>
+                    <!-- Missing phone, email, full address -->
+                </div>
+                <!-- ISSUE: no_outbound_links - no external links to social media etc -->
+            </div>
+            <div class="copyright">
+                &copy; 2024 Beijing Restaurant
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
