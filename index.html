@@ -1,57 +1,438 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="React Mock Fixture" />
-    <meta name="description" content="React fixture homepage for Orbitr SEO and layout testing." />
-    <title>React Fixture Home</title>
-    <link rel="stylesheet" href="/styles.css" />
-      <script>/* react fixture marker */</script>
-    <script src="/static/js/main.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beijing Restaurant - Authentic Chinese Cuisine in Washington DC</title>
+    <meta name="description" content="Experience authentic Beijing cuisine in Washington DC. Traditional recipes, fresh ingredients, and warm hospitality await you at Beijing Restaurant.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fefefe;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover {
+            color: #FFD700;
+            background-color: rgba(255, 215, 0, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23654321" width="1200" height="600"/><circle fill="%23FFD700" opacity="0.1" cx="200" cy="150" r="80"/><circle fill="%23DC143C" opacity="0.1" cx="800" cy="300" r="120"/><circle fill="%23FFD700" opacity="0.1" cx="1000" cy="100" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #8B0000;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #FFD700;
+        }
+
+        .btn-secondary:hover {
+            background: #FFD700;
+            color: #8B0000;
+            transform: translateY(-3px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8B0000;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #FFD700;
+            margin: 1rem auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #DC143C, #8B0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #8B0000;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #8B0000;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(45deg, #DC143C, #8B0000);
+            border-radius: 15px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            padding: 5rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-  <body>
-    <div id="root">
-      <header>
-        <nav class="react-nav" aria-label="Primary">
-          <strong>React Fixture</strong>
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/services.html">Services</a></li>
-            <li><a href="/blog/insights.html">Blog</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-            <li><a class="cta-link" href="/services.html">Book Strategy Call</a></li>
-          </ul>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo nav-link">Beijing Restaurant</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/menu" class="nav-link">Menu</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/gallery" class="nav-link">Gallery</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </div>
         </nav>
-      </header>
-      <main>
+    </header>
+
+    <main>
         <section class="hero">
-          <span class="badge">React</span>
-          <h1>Modern growth site with strong SEO structure</h1>
-          <p>This fixture simulates a React codebase with realistic navigation, content blocks, and design tokens.</p>
-          <div class="grid">
-            <article class="card">
-              <h2>Semantic Layout</h2>
-              <p>Header, main, nav, and footer boundaries are explicit for robust placement logic.</p>
-            </article>
-            <article class="card">
-              <h2>Style Context</h2>
-              <p>Brand variables use <code>--primary</code>, <code>--secondary</code>, and <code>--primary-color</code>.</p>
-            </article>
-            <article class="card">
-              <h2>Internal Linking</h2>
-              <p>Core pages are reachable through multiple contextual links.</p>
-            </article>
-          </div>
-          <aside class="blog-callout">
-            <strong>Framework hint:</strong> ReactDOM marker and root container are present.
-          </aside>
+            <div class="hero-content">
+                <h1>Authentic Beijing Cuisine</h1>
+                <p>Experience the rich flavors and traditions of Beijing in the heart of Washington DC. From hand-pulled noodles to Peking duck, every dish tells a story.</p>
+                <div class="cta-buttons">
+                    <a href="/menu" class="btn btn-primary">View Our Menu</a>
+                    <a href="/contact" class="btn btn-secondary">Make Reservation</a>
+                </div>
+            </div>
         </section>
-      </main>
-      <footer>
-        <p>Copyright 2026 React Fixture</p>
-      </footer>
-    </div>
-    <script src="/script.js"></script>
-  </body>
-</html>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Beijing Restaurant</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🥟</div>
+                        <h3>Traditional Recipes</h3>
+                        <p>Our chefs bring generations of authentic Beijing cooking techniques, passed down through family traditions and perfected over decades.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌿</div>
+                        <h3>Fresh Ingredients</h3>
+                        <p>We source the finest ingredients daily, ensuring every dish is prepared with the freshest vegetables, premium meats, and authentic spices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏮</div>
+                        <h3>Warm Atmosphere</h3>
+                        <p>Step into our beautifully decorated dining room that captures the essence of Beijing's rich culture and provides an unforgettable dining experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Our Story</h2>
+                        <p>Beijing Restaurant has been serving Washington DC's finest Chinese cuisine since 1985. Our journey began when Master Chef Li brought his family's traditional recipes from Beijing to share with the local community.</p>
+                        <p>Today, we continue to honor those traditions while creating new memories for families and friends. Every meal is prepared with care, using time-honored techniques and the finest ingredients.</p>
+                        <p>From our famous Peking duck to our hand-pulled noodles, each dish represents our commitment to authentic flavors and exceptional quality.</p>
+                        <a href="/about" class="btn btn-primary">Learn More About Us</a>
+                    </div>
+                    <div class="about-image">
+                        🏛️
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready for an Unforgettable Dining Experience?</h2>
+                <p>Join us for lunch or dinner and discover why Beijing Restaurant is Washington DC's favorite destination for authentic Chinese cuisine.</p>
+                <div class="cta-buttons">
+                    <a href="/contact" class="btn btn-primary">Make a Reservation</a>
+                    <a href="/menu" class="btn btn-secondary">Browse Menu</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Beijing Restaurant</h3>
+                    <p>Authentic Chinese cuisine in the heart of Washington DC. Experience traditional Beijing flavors with modern hospitality.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="/menu">Menu</a></p>
+                    <p><a href="/about">About Us</a></p>
+                    <p><a href="/gallery">Gallery</a></p>
+                    <p><a href="/contact">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 Washington DC</p>
+                    <p>📞 (202) 555-0123</p>
+                    <p>✉️ info@beijingrestaurantdc.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday - Thursday: 11:30 AM - 10:00 PM</p>
